@@ -23,7 +23,6 @@ public class Videoclub {
     }
 
     public int getIdPelicula() {
-        System.out.println("getIdPelicula");
         return idPelicula;
     }
 

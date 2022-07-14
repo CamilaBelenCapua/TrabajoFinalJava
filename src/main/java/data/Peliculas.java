@@ -121,8 +121,8 @@ public class Peliculas {
             stmt = conn.prepareStatement(SQL_UPDATE);
             stmt.setString(1, pelicula.getNombre());
             stmt.setString(2, pelicula.getDirector());
-            stmt.setDouble(3, pelicula.getPrecio());
-            stmt.setBoolean(4, pelicula.getAlquiler());
+            stmt.setDouble(4, pelicula.getPrecio());
+            stmt.setBoolean(3, pelicula.getAlquiler());
             stmt.setInt(5, pelicula.getIdPelicula());
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {

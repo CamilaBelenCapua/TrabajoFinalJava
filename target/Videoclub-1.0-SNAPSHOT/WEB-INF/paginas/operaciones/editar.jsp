@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="precio">Valor de la pelicula</label>
-                                        <input type="number" class="form-control" name="precio" required="" value="${pelicula.precio}">
+                                        <input type="currency" class="form-control" name="precio" required="" value="${pelicula.precio}">
                                     </div>
                                     <div class="form-group">
                                         <label for="alquiler">Alquiler</label>
