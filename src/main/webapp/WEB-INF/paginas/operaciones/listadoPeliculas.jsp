@@ -30,8 +30,8 @@
                                     <td><fmt:formatNumber value="${pelicula.precio}" type="currency"/></td>
                                     <td>${pelicula.alquiler}</td>
                                     <td>
-                                        <!-- NO OLVIDAR COMPLETAR HREF -->
-                                        <a href="" class="btn btn-secondary">
+                                      
+                                        <a href="${pageContext.request.contextPath}/servletControlador?accion=editar&idPelicula=${pelicula.idPelicula}" class="btn btn-secondary">
                                             <i class="fas fa-angle-double-right"></i>
                                             Editar
                                         </a>

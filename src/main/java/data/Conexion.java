@@ -12,6 +12,7 @@ public class Conexion {
         Connection con = null;
         try {
            Class.forName("com.mysql.jdbc.Driver"); 
+           System.out.println("PASO POR GET CONEXION");
            con = DriverManager.
            getConnection("jdbc:mysql://localhost:3306/peliculas?useSSL=false", "root", "password");
            System.out.println("Connection is successful !!!!!");
