@@ -27,7 +27,7 @@
                                         <th>Nombre</th>
                                         <th>Director</th>
                                         <th>Precio</th>
-                                        <th>Alquiler</th>
+                                        <th>Estado</th>
                                         <th >Acción</th>
                                     </tr>
                                 </thead>

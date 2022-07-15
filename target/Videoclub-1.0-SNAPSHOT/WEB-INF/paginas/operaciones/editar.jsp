@@ -44,11 +44,10 @@
                                     
                                     <br>
                                     
-                                    <p>Alquiler</p>
-                                    <select class="form-select" name="alquiler">
-                                          <label for="alquiler">Alquiler</label>
-                                          <option value= "false">false</option>
-                                          <option value= "true">true</option>
+                                    <label for="alquiler">Estado</label>
+                                    <select class="form-select" id="alquiler">
+                                          <option value= "false">No alquilado</option>
+                                          <option value= "true">Alquilado</option>
                                     </select>
                                 </div>
                             </div>
