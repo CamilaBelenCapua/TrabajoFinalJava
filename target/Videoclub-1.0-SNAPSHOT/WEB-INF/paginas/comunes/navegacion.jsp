@@ -1,4 +1,4 @@
-<section id="actions" class="py-2 mb-4 bg-light">
+<section id="actions" class="py-2 mb-4">
     <!doctype html>
 <html lang="en">
   <head>

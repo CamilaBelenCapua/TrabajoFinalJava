@@ -14,13 +14,13 @@
         <fmt:setLocale value="es_AR"/>
         <section id="peliculas">
             <div class="container">
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     <div class="col-md-8">
                         <div>
                             <div class="card-header">
-                                <h4>Listado de peliculas</h4>
+                                <h4><em>Listado de peliculas</em></h4>
                             </div>
-                            <table class = "table">
+                            <table class = "table text-center">
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -28,7 +28,7 @@
                                         <th>Director</th>
                                         <th>Precio</th>
                                         <th>Alquiler</th>
-                                        <th>Accion</th>
+                                        <th >Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,25 +52,22 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card text-center bg-danger text-white mb-3">
-                            <div class="card-body">
-                                <h3>Cantidad de peliculas</h3>
-                                <h4 class="display-4">${cantidadPeliculas}</h4>
+                    <div class="text-center">
+                        <div>
+                            <div>
+                                <p class="fs-5">Cantidad de peliculas: ${cantidadPeliculas}</p>
                             </div>
                         </div>
 
-                        <div class="card text-center bg-danger text-white mb-3">
-                            <div class="card-body">
-                                <h3>Cantidad de peliculas alquiladas</h3>
-                                <h4 class="display-4"><fmt:formatNumber value="${cantidadPeliculasAlquiladas}" type="number"/></h4>
+                        <div>
+                            <div>
+                                <p class="fs-5">Cantidad de peliculas alquiladas: <fmt:formatNumber value="${cantidadPeliculasAlquiladas}" type="number"/></p>
                             </div>
                         </div>    
 
-                        <div class="card text-center bg-success text-white mb-3">
-                            <div class="card-body">
-                                <h3>Precio Total de peliculas</h3>
-                                <h4 class="display-4"><fmt:formatNumber value="${precioTotal}" type="currency"/></h4>
+                        <div>
+                            <div>
+                                <p class="fs-5">Precio total de peliculas: <fmt:formatNumber value="${precioTotal}" type="currency"/></p>
                             </div>
                         </div>
                     </div>

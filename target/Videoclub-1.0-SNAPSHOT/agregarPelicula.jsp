@@ -14,6 +14,14 @@
             <section id="details">
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-2">
+                            <a href="index.jsp" class="link-info">>
+                                <i class="fas fa-arrow-left"></i>
+                                   Regresar al inicio
+                            </a>
+                        </div>
+                        
+                        <br>
                         <div class="col">
                             <div class="card">
                                 <div class="card-header">

@@ -7,10 +7,10 @@
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
    <body>
-       <header id="main-header" class="bg-success p-2 text-white bg-opacity-25">
+       <header id="main-header" class="bg-light p-2 text-center">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 text-center fw-light"">
                     <h1>
                         <i class="fas fa-cog"></i>
                         Control de Peliculas
