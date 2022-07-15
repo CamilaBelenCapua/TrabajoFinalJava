@@ -37,6 +37,7 @@ public class ServletControlador extends HttpServlet{
         if(queryParam!=null){
             switch(queryParam){
                 case "insertar":
+                    System.out.println("Paso por insertar");
                     insertarPelicula(req,res);
                     break;
                 case "modificar":
@@ -61,6 +62,16 @@ public class ServletControlador extends HttpServlet{
         return peliculas.size();
     }
       
+    private double calcularPeliculasAlquiladas(List<Videoclub> peliculas){
+        int cantidad = 0;
+        for (int i = 0; i < peliculas.size(); i++) {
+            if(peliculas.get(i).getAlquiler()){
+                cantidad++;
+            }
+        }
+        return cantidad;
+    }
+      
           
     private void editarPelicula(HttpServletRequest req , HttpServletResponse res) throws ServletException, IOException{
         int idPelicula = Integer.parseInt(req.getParameter("idPelicula"));
@@ -76,10 +87,13 @@ public class ServletControlador extends HttpServlet{
         HttpSession sesion = req.getSession();
         sesion.setAttribute("peliculas", peliculas);
         sesion.setAttribute("precioTotal", calcularPrecio(peliculas));
+        sesion.setAttribute("cantidadPeliculas", calcularPeliculas(peliculas));
+        sesion.setAttribute("cantidadPeliculasAlquiladas", calcularPeliculasAlquiladas(peliculas));
         res.sendRedirect("peliculas.jsp");
     }
     
     private void insertarPelicula(HttpServletRequest req , HttpServletResponse res) throws ServletException, IOException{
+        System.out.println("Paso por insertar pelicula");
         String nombre = req.getParameter("nombre");
         String director = req.getParameter("director");
         double precio = Double.parseDouble(req.getParameter("precio"));
@@ -99,10 +113,18 @@ public class ServletControlador extends HttpServlet{
         double precio = Double.parseDouble(req.getParameter("precio"));
         boolean alquiler = Boolean.parseBoolean(req.getParameter("alquiler"));
         
+        System.out.println("nombre "+nombre);
+        System.out.println("director "+director);
+        System.out.println("precio "+precio);
+        System.out.println("alquiler "+alquiler);
+                
+        
         int idPelicula = Integer.parseInt(req.getParameter("idPelicula"));
         
         Videoclub pelicula = new Videoclub(idPelicula,nombre,director,precio);
         pelicula.setAlquiler(alquiler);
+        
+        System.out.println("pelicula "+pelicula);
         
         int regMod = new Peliculas().update(pelicula);
         

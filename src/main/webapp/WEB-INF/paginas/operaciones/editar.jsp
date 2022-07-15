@@ -6,8 +6,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Editar Pelicula</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/382381b436.js" crossorigin="anonymous"></script>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      
     </head>
     <body>
 
@@ -36,10 +44,11 @@
                                         <label for="precio">Valor de la pelicula</label>
                                         <input type="currency" class="form-control" name="precio" required="" value="${pelicula.precio}">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="alquiler">Alquiler</label>
-                                        <input type="currency" class="form-control" name="alquiler" required="" value="${pelicula.alquiler}">
-                                    </div>
+                                    
+                                    <select class="form-select" aria-label="Default select example" name="alquiler">
+                                          <option value= "false">false</option>
+                                          <option value= "true">true</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

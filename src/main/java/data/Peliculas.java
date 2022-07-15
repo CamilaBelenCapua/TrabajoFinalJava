@@ -6,7 +6,7 @@ import java.util.*;
 import model.Videoclub;
 
 public class Peliculas {
-    private static final String SQL_CREATE="INSERT INTO peliculas(nombre, director, alquiler, precio) VALUES(?, ?, ?, ?)";
+    private static final String SQL_CREATE="INSERT INTO peliculas(nombre, director, precio, alquiler) VALUES(?, ?, ?, ?)";
     private static final String SQL_READ="SELECT * FROM peliculas";
     private static final String SQL_READ_BY_ID= "SELECT * FROM peliculas WHERE id = ?";
     private static final String SQL_UPDATE="UPDATE peliculas SET nombre = ?, director = ?, alquiler = ?, precio = ? WHERE id = ?";
@@ -31,9 +31,11 @@ public class Peliculas {
                 String nombre = rs.getString(2);
                 String director = rs.getString(3);
                 double precio = rs.getDouble(5);
+                boolean alquiler = rs.getBoolean(4);
                 
                 pelicula = new Videoclub(idPelicula, nombre, director,precio);
-
+                pelicula.setAlquiler(alquiler);
+                
                 peliculas.add(pelicula);
             }
         } catch (SQLException ex) {
@@ -88,6 +90,7 @@ public class Peliculas {
     
     
     public int insertPelicula(Videoclub pelicula){
+        System.out.println("Paso por insertar en la clase peliculas");
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
@@ -96,7 +99,8 @@ public class Peliculas {
             stmt = conn.prepareStatement(SQL_CREATE);
             stmt.setString(1, pelicula.getNombre());
             stmt.setString(2, pelicula.getDirector());
-            stmt.setDouble(4, pelicula.getPrecio());
+            stmt.setDouble(3, pelicula.getPrecio());
+            stmt.setBoolean(4, pelicula.getAlquiler());
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -116,6 +120,7 @@ public class Peliculas {
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
+        //System.out.println(pelicula.getAlquiler()+"Tipo de alquiler ");
         try {
             conn = getConexion();
             stmt = conn.prepareStatement(SQL_UPDATE);
